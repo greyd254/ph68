@@ -121,7 +121,7 @@ class HaLimCore_EPM extends HaLimCore_Init
         _e("Search", "halimthemes");
         echo "\" class=\"button\">\r\n\t        </form>\r\n\r\n\r\n\t        ";
         if ($cat_id) {
-            echo "<h2>" . get_cat_name($cat_id) . "</h2>";
+            echo "<h2>" . htmlspecialchars(get_cat_name($cat_id), ENT_QUOTES, 'UTF-8') . "</h2>";
         } else {
             $_obfuscated_0D11072733262D1712331725163C18241F1C1C38112A11_ = "";
             $_obfuscated_0D11072733262D1712331725163C18241F1C1C38112A11_ .= $_obfuscated_0D5B3837252D211A1D30112A013F2A1715402E5B1F2E22_ ? get_term_by("id", $_obfuscated_0D5B3837252D211A1D30112A013F2A1715402E5B1F2E22_, "country")->name : "";
@@ -209,9 +209,9 @@ class HaLimCore_EPM extends HaLimCore_Init
                 echo $active;
                 echo "\">\r\n\t\t            \t";
                 if ($link != "" || $_obfuscated_0D241A5C12183C383C363927294018043F171D13320532_ != "") {
-                    echo "<a class=\"item-btn item-btn-red\" href=\"?page=halim-episode-manager&act=edit_ep&post_id=" . $post->ID . "&server=0&paged=" . $paged . "&cat=" . $cat_id . "&s=" . $post_query . "\">" . __("Edit", "halimthemes") . "</a>";
+                    echo "<a class=\"item-btn item-btn-red\" href=\"?page=halim-episode-manager&act=edit_ep&post_id=" . htmlspecialchars($post->ID, ENT_QUOTES, 'UTF-8') . "&server=0&paged=" . htmlspecialchars($paged, ENT_QUOTES, 'UTF-8') . "&cat=" . htmlspecialchars($cat_id, ENT_QUOTES, 'UTF-8') . "&s=" . htmlspecialchars($post_query, ENT_QUOTES, 'UTF-8') . "\">" . __("Edit", "halimthemes") . "</a>";
                 } else {
-                    echo "<a class=\"act-btn\" href=\"?page=halim-episode-manager&act=add-new-server&post_id=" . $post->ID . "&server=0&paged=" . $paged . "&cat=" . $cat_id . "&s=" . $post_query . "\" style=\"background: #e88100;border: 1px solid #e88100;\">" . __("Add Server", "halimthemes") . "</a>";
+                    echo "<a class=\"act-btn\" href=\"?page=halim-episode-manager&act=add-new-server&post_id=" . htmlspecialchars($post->ID, ENT_QUOTES, 'UTF-8') . "&server=0&paged=" . htmlspecialchars($paged, ENT_QUOTES, 'UTF-8') . "&cat=" . htmlspecialchars($cat_id, ENT_QUOTES, 'UTF-8') . "&s=" . htmlspecialchars($post_query, ENT_QUOTES, 'UTF-8') . "\" style=\"background: #e88100;border: 1px solid #e88100;\">" . __("Add Server", "halimthemes") . "</a>";
                 }
                 echo "\r\n\t                </td>\r\n\t\t        </tr>\r\n        \t\t";
             }

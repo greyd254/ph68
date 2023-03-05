@@ -52,8 +52,6 @@ $post_id = isset($_GET['post_id']) ? absint($_GET['post_id']) : '';
 
 	</head>
 	<body>
-	<!-- <?php echo $type; ?> -->
-
 
 		<?php
 			$sources = '';

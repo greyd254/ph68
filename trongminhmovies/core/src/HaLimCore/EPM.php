@@ -227,10 +227,10 @@ class HaLimCore_EPM extends HaLimCore_Init
             $link = $_obfuscated_0D1236222D3E143F2E03071A2D1E0A29290B5B1C193811_ != NULL ? $data[0]["halimmovies_server_data"][$_obfuscated_0D1236222D3E143F2E03071A2D1E0A29290B5B1C193811_]["halimmovies_ep_link"] : "";
             echo "\t            <div id=\"halimmovies\" class=\"postbox\">\r\n\r\n\t                <button type=\"button\" class=\"handlediv\" aria-expanded=\"true\"><span class=\"screen-reader-text\">Toggle panel: Episode list</span><span class=\"toggle-indicator\" aria-hidden=\"true\"></span></button>\r\n\t                <h2 class=\"hndle ui-sortable-handle\" style=\"margin-left: 10px;padding-bottom: 15px;\">\r\n\t                    <span>";
             _e("Add new episode to", "halimthemes");
-            echo " <span class=\"movie-name\">";
-            echo get_the_title($postID);
-            echo "</span></span>\r\n\t                    <span class=\"editep\"><a href=\"?page=halim-episode-manager&act=edit_ep&post_id=";
-            echo $postID;
+	    echo " <span class=\"movie-name\">";
+	    echo esc_html(get_the_title($postID));
+	    echo "</span></span>\r\n\t                    <span class=\"editep\"><a href=\"?page=halim-episode-manager&act=edit_ep&post_id=";
+	    echo esc_html($postID);
             echo "&server=";
             echo $server;
             echo "&paged=";

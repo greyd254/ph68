@@ -299,16 +299,10 @@ class HaLimCore_EPM extends HaLimCore_Init
                 $_obfuscated_0D3C160E133218260F350528020412150B241915371722_ = json_decode($_obfuscated_0D043837302B19071711243734393640230B280F390922_);
                 $_obfuscated_0D271F31262E1626355B0C170A1C16151416112F2C1211_ = isset($_GET["server"]) ? $_GET["server"] : "0";
                 if ($_obfuscated_0D3C160E133218260F350528020412150B241915371722_) {
-    			echo "\t\t\t\t<div class=\"current_server\">\r\n\t\t\t\t\t<p style=\"font-weight: 700;\">Current Server:</p>\r\n\t\t\t\t\t";
-    			foreach ($_obfuscated_0D3C160E133218260F350528020412150B241915371722_ as $key => $value) {
-        			$sanitized_postID = sanitize_text_field($postID);
-        			$sanitized_server = sanitize_text_field($server);
-        			$sanitized_paged = sanitize_text_field($paged);
-        			$sanitized_cat_id = sanitize_text_field($cat_id);
-        			$active = $sanitized_server == $key ? " active" : "";
-        		echo "<span class=\"lsv\"><a class=\"item" . $active . "\" href=\"?page=halim-episode-manager&act=edit_ep&post_id=" . $sanitized_postID . "&server=" . $sanitized_server . "&paged=" . $sanitized_paged . "&cat=" . $sanitized_cat_id . "\">" . esc_html($value->halimmovies_server_name) . "</a><span class=\"del-server\" data-index=\"" . esc_attr($key) . "\" data-reload=\"\"><span class=\"dashicons dashicons-no\"></span></span></span>";
-    			}
-		}
+                    echo "\t\t\t\t<div class=\"current_server\">\r\n\t\t\t\t\t<p style=\"font-weight: 700;\">Current Server:</p>\r\n\t\t\t\t\t";
+                    foreach ($_obfuscated_0D3C160E133218260F350528020412150B241915371722_ as $key => $value) {
+                        $active = $server == $key ? " active" : "";
+                        echo "<span class=\"lsv\"><a class=\"item" . $active . "\" href=\"?page=halim-episode-manager&act=edit_ep&post_id=" . $postID . "&server=" . $key . "&paged=" . $paged . "&cat=" . $cat_id . "\">" . $value->halimmovies_server_name . "</a><span class=\"del-server\" data-index=\"" . $key . "\" data-reload=\"\"><span class=\"dashicons dashicons-no\"></span></span></span>";
                         $_obfuscated_0D0808143F250A242B242F1304110529333D401B081522_[] = $key;
                     }
                     echo "\t\t\t\t</div>\r\n\t\t\t";

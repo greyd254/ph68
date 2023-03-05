@@ -109,7 +109,7 @@ class halimRecentViewedPosts extends WP_Widget {
 										}
 
 										?>
-									    <div class="item post-<?php echo $post->ID; ?>">
+									<div class="item post-<?php echo htmlspecialchars($post->ID, ENT_QUOTES, 'UTF-8'); ?>">
 									        <a href="<?php echo $permalink;?>" title="<?php echo esc_html($post->post_title); ?>">
 									            <div class="item-link">
 									            	<?php if($lazyload) : ?>

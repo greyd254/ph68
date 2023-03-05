@@ -29,7 +29,7 @@ function halim_button_eps_manager() {
     $post_id = isset($_GET['post']) ? $_GET['post'] : '';
     if($post_id)
         // echo '<a class="btn-add-ep" href="'.admin_url('admin.php?page=halim-episode-manager&act=add_new_ep&post_id='.$post_id.'&server=0').'">Manage Episode</a>';
-        echo '<a class="btn-add-ep" href="'.admin_url('admin.php?page=halim-episode-manager&act=edit_ep&post_id='.$post_id.'&server=0&episode=1&paged=1&cat=').'">Manage Episode</a>';
+	echo '<a class="btn-add-ep" href="'.esc_url(admin_url('admin.php?page=halim-episode-manager&act=edit_ep&post_id='.$post_id.'&server=0&episode=1&paged=1&cat=')).'">Manage Episode</a>';
     else
         echo '<strong style="color:red">Please publish post before you can edit episodes</strong>';
 }

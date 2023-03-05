@@ -98,19 +98,19 @@ class HaLimCore_EPM extends HaLimCore_Init
         echo "</option>\r\n\t        </select>\r\n\r\n\r\n\t        <select id=\"orderby_select\">\r\n\t            <option value=\"\">";
         _e("Orderby", "halimthemes");
         echo "</option>\r\n\t            <option value=\"?page=halim-episode-manager&orderby=ASC\"";
-        echo__selected("ASC", htmlspecialchars($_obfuscated_0D0A28341D073F0C1B2B12293003341915223731380E22_));
+        echo __selected("ASC", $_obfuscated_0D0A28341D073F0C1B2B12293003341915223731380E22_);
         echo ">";
         _e("ASC", "halimthemes");
         echo "</option>\r\n\t            <option value=\"?page=halim-episode-manager&orderby=DESC\"";
-        echo__selected("DESC", htmlspecialchars($_obfuscated_0D0A28341D073F0C1B2B12293003341915223731380E22_));
+        echo __selected("DESC", $_obfuscated_0D0A28341D073F0C1B2B12293003341915223731380E22_);
         echo ">";
         _e("DESC", "halimthemes");
         echo "</option>\r\n\t            <option value=\"?page=halim-episode-manager&orderby=date\"";
-        echo __selected("date", htmlspecialchars($_obfuscated_0D0A28341D073F0C1B2B12293003341915223731380E22_));
+        echo __selected("date", $_obfuscated_0D0A28341D073F0C1B2B12293003341915223731380E22_);
         echo ">";
         _e("Date", "halimthemes");
         echo "</option>\r\n\t            <option value=\"?page=halim-episode-manager&orderby=modified\"";
-        echo __selected("modified", htmlspecialchars($_obfuscated_0D0A28341D073F0C1B2B12293003341915223731380E22_));
+        echo __selected("modified", $_obfuscated_0D0A28341D073F0C1B2B12293003341915223731380E22_);
         echo ">";
         _e("Modified", "halimthemes");
         echo "</option>\r\n\t        </select>\r\n\r\n\r\n\t        <form action=\"";
@@ -121,7 +121,7 @@ class HaLimCore_EPM extends HaLimCore_Init
         _e("Search", "halimthemes");
         echo "\" class=\"button\">\r\n\t        </form>\r\n\r\n\r\n\t        ";
         if ($cat_id) {
-            echo "<h2>" . get_cat_name(intval($cat_id)) . "</h2>";
+            echo "<h2>" . get_cat_name($cat_id) . "</h2>";
         } else {
             $_obfuscated_0D11072733262D1712331725163C18241F1C1C38112A11_ = "";
             $_obfuscated_0D11072733262D1712331725163C18241F1C1C38112A11_ .= $_obfuscated_0D5B3837252D211A1D30112A013F2A1715402E5B1F2E22_ ? get_term_by("id", $_obfuscated_0D5B3837252D211A1D30112A013F2A1715402E5B1F2E22_, "country")->name : "";
@@ -209,9 +209,9 @@ class HaLimCore_EPM extends HaLimCore_Init
                 echo $active;
                 echo "\">\r\n\t\t            \t";
                 if ($link != "" || $_obfuscated_0D241A5C12183C383C363927294018043F171D13320532_ != "") {
-                    echo '<a class="item-btn item-btn-red" href="?page=halim-episode-manager&act=edit_ep&post_id=' . urlencode($post->ID) . '&server=0&paged=' . urlencode($paged) . '&cat=' . urlencode($cat_id) . '&s=' . urlencode($post_query) . '">' . __("Edit", "halimthemes") . '</a>';
+                    echo "<a class=\"item-btn item-btn-red\" href=\"?page=halim-episode-manager&act=edit_ep&post_id=" . $post->ID . "&server=0&paged=" . $paged . "&cat=" . $cat_id . "&s=" . $post_query . "\">" . __("Edit", "halimthemes") . "</a>";
                 } else {
-                    echo '<a class="act-btn" href="?page=halim-episode-manager&act=add-new-server&post_id=' . urlencode($post->ID) . '&server=0&paged=' . urlencode($paged) . '&cat=' . urlencode($cat_id) . '&s=' . urlencode($post_query) . '" style="background: #e88100;border: 1px solid #e88100;">' . __("Add Server", "halimthemes") . '</a>';
+                    echo "<a class=\"act-btn\" href=\"?page=halim-episode-manager&act=add-new-server&post_id=" . $post->ID . "&server=0&paged=" . $paged . "&cat=" . $cat_id . "&s=" . $post_query . "\" style=\"background: #e88100;border: 1px solid #e88100;\">" . __("Add Server", "halimthemes") . "</a>";
                 }
                 echo "\r\n\t                </td>\r\n\t\t        </tr>\r\n        \t\t";
             }
@@ -228,13 +228,13 @@ class HaLimCore_EPM extends HaLimCore_Init
             echo "\t            <div id=\"halimmovies\" class=\"postbox\">\r\n\r\n\t                <button type=\"button\" class=\"handlediv\" aria-expanded=\"true\"><span class=\"screen-reader-text\">Toggle panel: Episode list</span><span class=\"toggle-indicator\" aria-hidden=\"true\"></span></button>\r\n\t                <h2 class=\"hndle ui-sortable-handle\" style=\"margin-left: 10px;padding-bottom: 15px;\">\r\n\t                    <span>";
             _e("Add new episode to", "halimthemes");
             echo " <span class=\"movie-name\">";
-            echo get_the_title(intval($postID));
+            echo get_the_title($postID);
             echo "</span></span>\r\n\t                    <span class=\"editep\"><a href=\"?page=halim-episode-manager&act=edit_ep&post_id=";
-            echo intval($postID);
+            echo $postID;
             echo "&server=";
             echo $server;
             echo "&paged=";
-            echo intval($paged);
+            echo $paged;
             echo "\"><span class=\"dashicons dashicons-edit\"></span> ";
             _e("Edit Episode", "halimthemes");
             echo "</a></span>\r\n\t                </h2>\r\n\t                <div class=\"inside\">\r\n\t                    <div class=\"clear\"></div>\r\n\t                    <div id=\"halimmovies-player-data\">\r\n\t                        <div class=\"tab-content\">\r\n\t                            <div class=\"tab-pane active\" id=\"server_1\" data-server=\"1\">\r\n\t                                <div id=\"halimmovies_episodes\" class=\"form-horizontal\">\r\n\t                                    <div class=\"form-group\">\r\n\t                                        <label for=\"halimmovies_server_name\"><h3>";
@@ -242,7 +242,7 @@ class HaLimCore_EPM extends HaLimCore_Init
             echo "</h3></label>\r\n\t                                        <div class=\"listsv addnew addnew-server-act\">\r\n\t                                            ";
             foreach ($data as $key => $value) {
                 $active = $server == $key ? " active" : "";
-                echo '<span class="svitem xx"><a class="item' . $active . '" href="' . esc_url( '?page=halim-episode-manager&act=add_new_ep&post_id=' . $postID . '&server=' . $key . '&paged=' . $paged . '&cat=' . $cat_id ) . '">' . $value["halimmovies_server_name"] . '</a><span class="del-server" data-index="' . $key . '"><span class="dashicons dashicons-no"></span></span></span>';
+                echo "<span class=\"svitem xx\"><a class=\"item" . $active . "\" href=\"?page=halim-episode-manager&act=add_new_ep&post_id=" . $postID . "&server=" . $key . "&paged=" . $paged . "&cat=" . $cat_id . "\">" . $value["halimmovies_server_name"] . "</a><span class=\"del-server\" data-index=\"" . $key . "\"><span class=\"dashicons dashicons-no\"></span></span></span>";
                 $_obfuscated_0D0808143F250A242B242F1304110529333D401B081522_[] = $key;
             }
             $_obfuscated_0D0808143F250A242B242F1304110529333D401B081522_ = HALIMHelper::array_key_last($_obfuscated_0D0808143F250A242B242F1304110529333D401B081522_);
@@ -299,12 +299,10 @@ class HaLimCore_EPM extends HaLimCore_Init
                 $_obfuscated_0D3C160E133218260F350528020412150B241915371722_ = json_decode($_obfuscated_0D043837302B19071711243734393640230B280F390922_);
                 $_obfuscated_0D271F31262E1626355B0C170A1C16151416112F2C1211_ = isset($_GET["server"]) ? $_GET["server"] : "0";
                 if ($_obfuscated_0D3C160E133218260F350528020412150B241915371722_) {
-    echo "\t\t\t\t<div class=\"current_server\">\r\n\t\t\t\t\t<p style=\"font-weight: 700;\">Current Server:</p>\r\n\t\t\t\t\t";
-    foreach ($_obfuscated_0D3C160E133218260F350528020412150B241915371722_ as $key => $value) {
-        $active = $server == $key ? " active" : "";
-        echo "<span class=\"lsv\"><a class=\"item" . $active . "\" href=\"?page=halim-episode-manager&act=edit_ep&post_id=" . $postID . "&server=" . $key . "&paged=" . $paged . "&cat=" . $cat_id . "\">" . $value->halimmovies_server_name . "</a><span class=\"del-server\" data-index=\"" . $key . "\" data-reload=\"\"><span class=\"dashicons dashicons-no\"></span></span></span>";
-    }
-}
+                    echo "\t\t\t\t<div class=\"current_server\">\r\n\t\t\t\t\t<p style=\"font-weight: 700;\">Current Server:</p>\r\n\t\t\t\t\t";
+                    foreach ($_obfuscated_0D3C160E133218260F350528020412150B241915371722_ as $key => $value) {
+                        $active = $server == $key ? " active" : "";
+                        echo "<span class=\"lsv\"><a class=\"item" . $active . "\" href=\"?page=halim-episode-manager&act=edit_ep&post_id=" . $postID . "&server=" . $key . "&paged=" . $paged . "&cat=" . $cat_id . "\">" . $value->halimmovies_server_name . "</a><span class=\"del-server\" data-index=\"" . $key . "\" data-reload=\"\"><span class=\"dashicons dashicons-no\"></span></span></span>";
                         $_obfuscated_0D0808143F250A242B242F1304110529333D401B081522_[] = $key;
                     }
                     echo "\t\t\t\t</div>\r\n\t\t\t";
@@ -356,15 +354,15 @@ class HaLimCore_EPM extends HaLimCore_Init
                     echo "\" id=\"halim_runtime\" placeholder=\"Runtime\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"halim-input-box\">\r\n\t\t\t\t\t\t\t<label for=\"halim_rating\">";
                     _e("IMBD Rating", "halimthemes");
                     echo "</label>\r\n\t\t\t\t\t\t\t<input type=\"text\" name=\"halim_rating\" value=\"";
-                    echo $_obfuscated_0D1321401B5B242B2E261A13041635100D0F053F261B32_[sanitize_key($halim_rating)];
+                    echo $_obfuscated_0D1321401B5B242B2E261A13041635100D0F053F261B32_["halim_rating"];
                     echo "\" id=\"halim_rating\" placeholder=\"IMDb rating\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"halim-input-box\">\r\n\t\t\t\t\t\t\t<label for=\"halim_votes\">";
                     _e("IMBD Votes", "halimthemes");
                     echo "</label>\r\n\t\t\t\t\t\t\t<input type=\"text\" name=\"halim_votes\" value=\"";
-                    echo $_obfuscated_0D1321401B5B242B2E261A13041635100D0F053F261B32_[sanitize_key($halim_votes)];
+                    echo $_obfuscated_0D1321401B5B242B2E261A13041635100D0F053F261B32_["halim_votes"];
                     echo "\" id=\"halim_votes\" placeholder=\"IMDb votes\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"halim-input-box\">\r\n\t\t\t\t\t\t\t<label for=\"halim_quality\">";
                     _e("Quality", "halimthemes");
                     echo "</label>\r\n\t\t\t\t\t\t\t<input type=\"text\" name=\"halim_quality\" value=\"";
-                    echo $_obfuscated_0D1321401B5B242B2E261A13041635100D0F053F261B32_[sanitize_key($halim_quality)];
+                    echo $_obfuscated_0D1321401B5B242B2E261A13041635100D0F053F261B32_["halim_quality"];
                     echo "\" id=\"halim_quality\" placeholder=\"Quality\">\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<div class=\"halim-input-box\">\r\n\t\t\t\t\t\t\t<label for=\"halim_episode\">";
                     _e("Episode", "halimthemes");
                     echo "</label>\r\n\t\t\t\t\t\t\t<input type=\"text\" name=\"halim_episode\" value=\"";

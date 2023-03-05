@@ -695,7 +695,7 @@ class HaLimCore_EPM extends HaLimCore_Init
                                                 echo "&server=";
                                                 echo $key;
                                                 echo "&cat=";
-                                                echo $cat_id;
+                                                echo htmlspecialchars($cat_id, ENT_QUOTES, 'UTF-8');
                                                 echo "&paged=";
                                                 echo $paged;
                                                 echo "\"><span class=\"dashicons dashicons-plus-alt\"></span></a> -->\r\n\r\n\t                                        <button href=\"#halimmovies_listsv_";
@@ -1036,7 +1036,16 @@ class HaLimCore_EPM extends HaLimCore_Init
             $_obfuscated_0D111F31182F12072F31373223050A130716133F011A01_[] = $paged + 1;
         }
         echo "<div class=\"text-center pagenav\">";
-        echo "<form action=\"admin.php\" method=\"GET\" style=\"width: 20%;display: inline-block;\">\r\n\t    <input name=\"page\" type=\"hidden\" value=\"halim-episode-manager\"/>\r\n\t    <input name=\"act\" type=\"hidden\" value=\"edit_ep\"/>\r\n\t    <input name=\"post_id\" type=\"hidden\" value=\"" . $_obfuscated_0D1A0725351501221F2426130A073C340D19100D053022_ . "\"/>\r\n\t    <input name=\"server\" type=\"hidden\" value=\"" . $server . "\"/>\r\n\t    <input name=\"p\" type=\"hidden\" value=\"" . $p . "\" />\r\n\t    <span>Go to page: </span>\r\n\t    <input name=\"paged\" type=\"number\" value=\"" . $_obfuscated_0D0329322D2C3D2E0211271D2733160C0B0D1F2C2F3901_ . "\" class=\"regular-text\" style=\"width: 25%;\"/>\r\n\t    <button class=\"button-gotopage\">GO</button>\r\n\t    </form>";
+        echo '<form action="admin.php" method="GET" style="width: 20%;display: inline-block;">';
+        echo '<input name="page" type="hidden" value="' . htmlspecialchars("halim-episode-manager", ENT_QUOTES, 'UTF-8') . '"/>';
+        echo '<input name="act" type="hidden" value="' . htmlspecialchars("edit_ep", ENT_QUOTES, 'UTF-8') . '"/>';
+        echo '<input name="post_id" type="hidden" value="' . htmlspecialchars($_obfuscated_0D1A0725351501221F2426130A073C340D19100D053022_, ENT_QUOTES, 'UTF-8') . '"/>';
+        echo '<input name="server" type="hidden" value="' . htmlspecialchars($server, ENT_QUOTES, 'UTF-8') . '"/>';
+        echo '<input name="p" type="hidden" value="' . htmlspecialchars($p, ENT_QUOTES, 'UTF-8') . '" />';
+        echo '<span>Go to page: </span>';
+        echo '<input name="paged" type="number" value="' . htmlspecialchars($_obfuscated_0D0329322D2C3D2E0211271D2733160C0B0D1F2C2F3901_, ENT_QUOTES, 'UTF-8') . '" class="regular-text" style="width: 25%;" />';
+        echo '<button class="button-gotopage">GO</button>';
+        echo '</form>';
         echo "<ul class=\"pagination\" style=\"text-align: center;margin: 20px 0 5px;\">\n";
         if (!in_array(1, $_obfuscated_0D111F31182F12072F31373223050A130716133F011A01_)) {
             $_obfuscated_0D013D2E131A02153D1C101A2D2113020F092715400501_ = 1 == $paged ? " class=\"active\"" : "";

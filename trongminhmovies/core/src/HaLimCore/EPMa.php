@@ -579,9 +579,10 @@ class HaLimCore_EPM extends HaLimCore_Init
                             echo "\t\t\t\t</div>\r\n\t\t\t";
                         }
                         echo "\r\n\t\t\t<p>\r\n\t\t\t\t<label for=\"servername\" style=\"font-weight: 700;\">New Server Name:</label>\r\n\t\t\t\t<input type=\"text\" name=\"servername\" id=\"servername\" value=\"Server #";
-                        echo $_obfuscated_0D29291B25012C0A30180D0A0B1E102C2118093B042301_ ? HALIMHelper::array_key_last($_obfuscated_0D29291B25012C0A30180D0A0B1E102C2118093B042301_) + 2 : $_obfuscated_0D351C0D07025C1F11390601072B0B01300D340D3E0322_ + 1;
+                        echo htmlspecialchars($_obfuscated_0D29291B25012C0A30180D0A0B1E102C2118093B042301_ ? HALIMHelper::array_key_last($_obfuscated_0D29291B25012C0A30180D0A0B1E102C2118093B042301_) + 2 : $_obfuscated_0D351C0D07025C1F11390601072B0B01300D340D3E0322_ + 1, ENT_QUOTES, 'UTF-8');
                         echo "\" placeholder=\"Server HD\" data-server=\"";
-                        echo $_obfuscated_0D29291B25012C0A30180D0A0B1E102C2118093B042301_ ? HALIMHelper::array_key_last($_obfuscated_0D29291B25012C0A30180D0A0B1E102C2118093B042301_) + 1 : $_obfuscated_0D351C0D07025C1F11390601072B0B01300D340D3E0322_;
+                        echo htmlspecialchars($_obfuscated_0D29291B25012C0A30180D0A0B1E102C2118093B042301_ ? HALIMHelper::array_key_last($_obfuscated_0D29291B25012C0A30180D0A0B1E102C2118093B042301_) + 1 : $_obfuscated_0D351C0D07025C1F11390601072B0B01300D340D3E0322_, ENT_QUOTES, 'UTF-8');
+
                         echo "\" data-post-id=\"";
                         echo $postID;
                         echo "\">\r\n\t\t\t</p>\r\n            <p>\r\n\t            <span class=\"tip\" style=\"border: 1px solid #7e8993;margin-bottom: 3px;padding: 10px 15px;font-size: 12px;\"><span>";

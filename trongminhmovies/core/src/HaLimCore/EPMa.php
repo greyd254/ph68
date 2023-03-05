@@ -110,15 +110,15 @@ class HaLimCore_EPM extends HaLimCore_Init
             echo ">";
             _e("ASC", "halimthemes");
             echo "</option>\r\n\t            <option value=\"?page=halim-episode-manager&orderby=DESC\"";
-            echo __selected("DESC", $_obfuscated_0D1C0A2E1E1C0A0302240C5B285B02352840272D0D0522_);
+            echo __selected(htmlspecialchars("DESC", ENT_QUOTES), $_obfuscated_0D1C0A2E1E1C0A0302240C5B285B02352840272D0D0522_);
             echo ">";
             _e("DESC", "halimthemes");
             echo "</option>\r\n\t            <option value=\"?page=halim-episode-manager&orderby=date\"";
-            echo __selected("date", $_obfuscated_0D1C0A2E1E1C0A0302240C5B285B02352840272D0D0522_);
+            echo __selected(htmlspecialchars("date", ENT_QUOTES), $_obfuscated_0D1C0A2E1E1C0A0302240C5B285B02352840272D0D0522_);
             echo ">";
             _e("Date", "halimthemes");
             echo "</option>\r\n\t            <option value=\"?page=halim-episode-manager&orderby=modified\"";
-            echo __selected("modified", $_obfuscated_0D1C0A2E1E1C0A0302240C5B285B02352840272D0D0522_);
+            echo __selected(htmlspecialchars("modified", ENT_QUOTES), $_obfuscated_0D1C0A2E1E1C0A0302240C5B285B02352840272D0D0522_);
             echo ">";
             _e("Modified", "halimthemes");
             echo "</option>\r\n\t        </select>\r\n\r\n\r\n\t        <form action=\"";
@@ -129,7 +129,7 @@ class HaLimCore_EPM extends HaLimCore_Init
             _e("Search", "halimthemes");
             echo "\" class=\"button\">\r\n\t        </form>\r\n\r\n\r\n\t        ";
             if ($cat_id) {
-                echo "<h2>" . get_cat_name($cat_id) . "</h2>";
+                echo "<h2>" . htmlspecialchars(get_cat_name($cat_id)) . "</h2>";
             } else {
                 $_obfuscated_0D231A0E1B393306192E0D0B060B26270F09250C341D01_ = "";
                 $_obfuscated_0D231A0E1B393306192E0D0B060B26270F09250C341D01_ .= $_obfuscated_0D07355C2E0D2F122F3E271A1D283C1732015B3B292401_ ? get_term_by("id", $_obfuscated_0D07355C2E0D2F122F3E271A1D283C1732015B3B292401_, "country")->name : "";
@@ -242,9 +242,9 @@ class HaLimCore_EPM extends HaLimCore_Init
                     echo $active;
                     echo "\">\r\n\r\n\t\t            \t";
                     if ($link != "" || $_obfuscated_0D3C37191017381219263E5C251515295B34361A2C1F32_ != "") {
-                        echo "<a class=\"item-btn item-btn-red\" href=\"?page=halim-episode-manager&act=edit_ep&post_id=" . $post->ID . "&server=0&paged=" . $paged . "&cat=" . $cat_id . "&s=" . $post_query . "\">" . __("Edit", "halimthemes") . "</a>";
+                        echo "<a class=\"item-btn item-btn-red\" href=\"?page=halim-episode-manager&act=edit_ep&post_id=" . urlencode($post->ID) . "&server=0&paged=" . urlencode($paged) . "&cat=" . urlencode($cat_id) . "&s=" . urlencode($post_query) . "\">" . __("Edit", "halimthemes") . "</a>";
                     } else {
-                        echo "<a class=\"act-btn\" href=\"?page=halim-episode-manager&act=add-new-server&post_id=" . $post->ID . "&server=0&paged=" . $paged . "&cat=" . $cat_id . "&s=" . $post_query . "\" style=\"background: #e88100;border: 1px solid #e88100;\">" . __("Add Server", "halimthemes") . "</a>";
+                        echo "<a class=\"act-btn\" href=\"?page=halim-episode-manager&act=add-new-server&post_id=" . urlencode($post->ID) . "&server=0&paged=" . urlencode($paged) . "&cat=" . urlencode($cat_id) . "&s=" . urlencode($post_query) . "\" style=\"background: #e88100;border: 1px solid #e88100;\">" . __("Add Server", "halimthemes") . "</a>";
                     }
                     echo "\r\n\t                </td>\r\n\t\t        </tr>\r\n        \t\t";
                 }

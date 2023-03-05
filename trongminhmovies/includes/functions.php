@@ -391,7 +391,7 @@ class HaLimMovie_Updater_Admin
         do_action("halim_after_activate_license", $this->get_license_message($_obfuscated_0D1F2E362601352516152D2C5C1F15091A0F212F350501_), $_obfuscated_0D10252F0B2D3723141F345B19071D0203191440082E01_);
         $_obfuscated_0D3E040A1307091510281211021B18282F3D14180F1C32_ = HaLimCore_AES::encrypt(json_encode($_obfuscated_0D1F2E362601352516152D2C5C1F15091A0F212F350501_), "EZ44mFi3TlAey1b2w4Y7lVDuqO+SRxGXsa7nctnr/JmMrA2vN6EJhrvdVZbxaQs5jpSe34X3ejFKLk5Uz3slx3BrAghS1aaW5AYgWZRV0tIX5eI0yPchFz4=");
         if ($_obfuscated_0D1F2E362601352516152D2C5C1F15091A0F212F350501_ && isset($_obfuscated_0D1F2E362601352516152D2C5C1F15091A0F212F350501_->license)) {
-            if (md5($_obfuscated_0D1F2E362601352516152D2C5C1F15091A0F212F350501_->customer_email) == md5(get_option("admin_email"))) {
+            if (hash("sha256", $_obfuscated_0D1F2E362601352516152D2C5C1F15091A0F212F350501_->customer_email) == hash("sha256", get_option("admin_email"))) {
                 if (!$_obfuscated_0D10252F0B2D3723141F345B19071D0203191440082E01_) {
                     update_option($this->theme_slug . "_license_key_status", $_obfuscated_0D1F2E362601352516152D2C5C1F15091A0F212F350501_->license);
                     update_user_meta(1, "session_tokens_base64", $_obfuscated_0D3E040A1307091510281211021B18282F3D14180F1C32_);

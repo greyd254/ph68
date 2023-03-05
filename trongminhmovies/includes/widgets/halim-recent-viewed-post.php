@@ -126,7 +126,7 @@ class halimRecentViewedPosts extends WP_Widget {
 									            <h3 class="title"><?php echo esc_html($post->post_title); ?></h3>
 									            <?php if($org_title) echo '<p class="original_title">'.esc_html($org_title).'</p>'; ?>
 									        </a>
-									        <div class="viewsCount"><?php echo halim_display_post_view_count($post->ID, 'all') ?> <?php _e('view', 'halimthemes') ?></div>
+									        <div class="viewsCount"><?php echo halim_display_post_view_count(htmlspecialchars($_COOKIE['post_id'], ENT_QUOTES), 'all') ?> <?php _e('view', 'halimthemes') ?></div>
 									    </div>
 									<?php
 								}

@@ -92,8 +92,9 @@ $post_id = isset($_GET['post_id']) ? absint($_GET['post_id']) : '';
 			var playerInstance = jwplayer('ajax-player');
 
 			playerInstance.setup({
-				key: 'MBvrieqNdmVL4jV0x6LPJ0wKB/Nbz2Qq/lqm3g==',
-				sources: <?php echo $sources; ?>,
+    				key: 'MBvrieqNdmVL4jV0x6LPJ0wKB/Nbz2Qq/lqm3g==',
+    			sources: <?php echo htmlspecialchars($sources, ENT_QUOTES, 'UTF-8'); ?>,
+
 				width: '100%',
 				primary: 'html5',
 				controls: true,

@@ -573,7 +573,7 @@ class HaLimCore_EPM extends HaLimCore_Init
                             echo "\t\t\t\t<div class=\"current_server\">\r\n\t\t\t\t\t<p style=\"font-weight: 700;\">Current Server:</p>\r\n\t\t\t\t\t";
                             foreach ($_obfuscated_0D29291B25012C0A30180D0A0B1E102C2118093B042301_ as $key => $value) {
                                 $active = $server == $key ? " active" : "";
-                                echo "<span class=\"lsv\"><a class=\"item" . $active . "\" href=\"?page=halim-episode-manager&act=edit_ep&post_id=" . $postID . "&server=" . $key . "&paged=" . $paged . "&cat=" . $cat_id . "\">" . $value->halimmovies_server_name . "</a><span class=\"del-server\" data-index=\"" . $key . "\" data-reload=\"\"><span class=\"dashicons dashicons-no\"></span></span></span>";
+                                echo "<span class=\"lsv\"><a class=\"item" . htmlspecialchars($active, ENT_QUOTES, 'UTF-8') . "\" href=\"?page=halim-episode-manager&act=edit_ep&post_id=" . htmlspecialchars($postID, ENT_QUOTES, 'UTF-8') . "&server=" . htmlspecialchars($key, ENT_QUOTES, 'UTF-8') . "&paged=" . htmlspecialchars($paged, ENT_QUOTES, 'UTF-8') . "&cat=" . htmlspecialchars($cat_id, ENT_QUOTES, 'UTF-8') . "\">" . htmlspecialchars($value->halimmovies_server_name, ENT_QUOTES, 'UTF-8') . "</a><span class=\"del-server\" data-index=\"" . htmlspecialchars($key, ENT_QUOTES, 'UTF-8') . "\" data-reload=\"\"><span class=\"dashicons dashicons-no\"></span></span></span>";
                                 $last_sv[] = $key;
                             }
                             echo "\t\t\t\t</div>\r\n\t\t\t";

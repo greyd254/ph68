@@ -163,7 +163,7 @@ function halim_posts_visited() {
 		} else {
 			$posts = array( get_the_ID() );
 		}
-		setcookie( $cookie, json_encode( $posts ), time() + ( DAY_IN_SECONDS * 31 ), COOKIEPATH, COOKIE_DOMAIN );
+		setcookie( $cookie, json_encode( $posts ), time() + ( DAY_IN_SECONDS * 31 ), COOKIEPATH, COOKIE_DOMAIN, true, true );
 	}
 }
 add_action( 'template_redirect', 'halim_posts_visited' );

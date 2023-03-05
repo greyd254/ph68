@@ -231,10 +231,8 @@ class HaLimCore_EPM extends HaLimCore_Init
 	    echo esc_html(get_the_title($postID));
 	    echo "</span></span>\r\n\t                    <span class=\"editep\"><a href=\"?page=halim-episode-manager&act=edit_ep&post_id=";
 	    echo esc_html($postID);
-            echo "&server=";
-            echo $server;
-            echo "&paged=";
-            echo $paged;
+            echo "&server=" . urlencode($server);
+	    echo "&paged=" . urlencode($paged);
             echo "\"><span class=\"dashicons dashicons-edit\"></span> ";
             _e("Edit Episode", "halimthemes");
             echo "</a></span>\r\n\t                </h2>\r\n\t                <div class=\"inside\">\r\n\t                    <div class=\"clear\"></div>\r\n\t                    <div id=\"halimmovies-player-data\">\r\n\t                        <div class=\"tab-content\">\r\n\t                            <div class=\"tab-pane active\" id=\"server_1\" data-server=\"1\">\r\n\t                                <div id=\"halimmovies_episodes\" class=\"form-horizontal\">\r\n\t                                    <div class=\"form-group\">\r\n\t                                        <label for=\"halimmovies_server_name\"><h3>";

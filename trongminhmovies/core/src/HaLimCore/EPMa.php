@@ -111,7 +111,7 @@ class HaLimCore_EPM extends HaLimCore_Init
             _e("ASC", "halimthemes");
             echo "</option>\r\n\t            <option value=\"?page=halim-episode-manager&orderby=DESC\"";
             $desc = isset($_POST['desc']) ? htmlspecialchars($_POST['desc'], ENT_QUOTES) : '';
-            echo __selected($desc, $_obfuscated_0D1C0A2E1E1C0A0302240C5B285B02352840272D0D0522_);
+            echo __selected($desc, htmlspecialchars($_obfuscated_0D1C0A2E1E1C0A0302240C5B285B02352840272D0D0522_, ENT_QUOTES, 'UTF-8'));
             echo ">";
             _e("DESC", "halimthemes");
             echo "</option>\r\n\t            <option value=\"?page=halim-episode-manager&orderby=date\"";

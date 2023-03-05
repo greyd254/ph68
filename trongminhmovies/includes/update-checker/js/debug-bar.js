@@ -14,7 +14,8 @@ jQuery(function($) {
 				_wpnonce: panel.data('nonce')
 			},
 			function(data) {
-				responseBox.html(data);
+				const sanitizedData = DOMPurify.sanitize(data);
+responseBox.innerHTML = sanitizedData;
 			},
 			'html'
 		);

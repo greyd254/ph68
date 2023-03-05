@@ -1,0 +1,17 @@
+/*!
+ Theme Name:   TrongMinh Movies
+ Theme URI:    https://trongminh.net
+ Description:  TrongMinh Movies is one of the best wordpress theme for movies and tv-series content
+ Author:       TrongMinh
+ Author URI:   https://trongminh.net
+ Version:      5.5.4
+ Tags:         dark, two-columns, multi-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  trongminhmovies
+*/
+
+body.halimthemes {
+	direction: rtl;
+  	unicode-bidi: embed;
+}
+
+/* Custom RTL CSS */

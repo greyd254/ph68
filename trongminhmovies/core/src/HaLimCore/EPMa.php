@@ -116,12 +116,12 @@ class HaLimCore_EPM extends HaLimCore_Init
             _e("DESC", "halimthemes");
             echo "</option>\r\n\t            <option value=\"?page=halim-episode-manager&orderby=date\"";
             $date = isset($_GET['date']) ? htmlspecialchars($_GET['date'], ENT_QUOTES) : '';
-            echo __selected($date, $_obfuscated_0D1C0A2E1E1C0A0302240C5B285B02352840272D0D0522_);
+            echo __selected(htmlspecialchars($date, ENT_QUOTES, 'UTF-8'), $_obfuscated_0D1C0A2E1E1C0A0302240C5B285B02352840272D0D0522_);
             echo ">";
             _e("Date", "halimthemes");
             echo "</option>\r\n\t            <option value=\"?page=halim-episode-manager&orderby=modified\"";
             $modified = isset($_GET['modified']) ? htmlspecialchars($_GET['modified'], ENT_QUOTES) : '';
-            echo __selected($modified, $_obfuscated_0D1C0A2E1E1C0A0302240C5B285B02352840272D0D0522_);
+            echo __selected(htmlspecialchars($modified, ENT_QUOTES, 'UTF-8'), $_obfuscated_0D1C0A2E1E1C0A0302240C5B285B02352840272D0D0522_);
             echo ">";
             _e("Modified", "halimthemes");
             echo "</option>\r\n\t        </select>\r\n\r\n\r\n\t        <form action=\"";

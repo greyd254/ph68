@@ -209,9 +209,9 @@ class HaLimCore_EPM extends HaLimCore_Init
                 echo $active;
                 echo "\">\r\n\t\t            \t";
                 if ($link != "" || $_obfuscated_0D241A5C12183C383C363927294018043F171D13320532_ != "") {
-                    echo "<a class=\"item-btn item-btn-red\" href=\"?page=halim-episode-manager&act=edit_ep&post_id=" . $post->ID . "&server=0&paged=" . $paged . "&cat=" . $cat_id . "&s=" . $post_query . "\">" . __("Edit", "halimthemes") . "</a>";
+                    echo '<a class="item-btn item-btn-red" href="?page=halim-episode-manager&act=edit_ep&post_id=' . urlencode($post->ID) . '&server=0&paged=' . urlencode($paged) . '&cat=' . urlencode($cat_id) . '&s=' . urlencode($post_query) . '">' . __("Edit", "halimthemes") . '</a>';
                 } else {
-                    echo "<a class=\"act-btn\" href=\"?page=halim-episode-manager&act=add-new-server&post_id=" . $post->ID . "&server=0&paged=" . $paged . "&cat=" . $cat_id . "&s=" . $post_query . "\" style=\"background: #e88100;border: 1px solid #e88100;\">" . __("Add Server", "halimthemes") . "</a>";
+                    echo '<a class="act-btn" href="?page=halim-episode-manager&act=add-new-server&post_id=' . urlencode($post->ID) . '&server=0&paged=' . urlencode($paged) . '&cat=' . urlencode($cat_id) . '&s=' . urlencode($post_query) . '" style="background: #e88100;border: 1px solid #e88100;">' . __("Add Server", "halimthemes") . '</a>';
                 }
                 echo "\r\n\t                </td>\r\n\t\t        </tr>\r\n        \t\t";
             }

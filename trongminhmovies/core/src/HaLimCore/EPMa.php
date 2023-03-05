@@ -275,7 +275,7 @@ class HaLimCore_EPM extends HaLimCore_Init
                 echo "</h3></label>\r\n\t                                        <div class=\"listsv addnew addnew-server-act\">\r\n\t                                            ";
                 foreach ($data as $key => $value) {
                     $active = $server == $key ? " active" : "";
-                    echo "<span class=\"svitem xx\"><a class=\"item" . $active . "\" href=\"?page=halim-episode-manager&act=add_new_ep&post_id=" . $postID . "&server=" . $key . "&paged=" . $paged . "&cat=" . $cat_id . "\">" . $value["halimmovies_server_name"] . "</a><span class=\"del-server\" data-index=\"" . $key . "\"><span class=\"dashicons dashicons-no\"></span></span></span>";
+                    echo "<span class=\"svitem xx\"><a class=\"item" . $active . "\" href=\"?page=halim-episode-manager&act=add_new_ep&post_id=" . urlencode($postID) . "&server=" . urlencode($key) . "&paged=" . urlencode($paged) . "&cat=" . urlencode($cat_id) . "\">" . htmlspecialchars($value["halimmovies_server_name"]) . "</a><span class=\"del-server\" data-index=\"" . htmlspecialchars($key) . "\"><span class=\"dashicons dashicons-no\"></span></span></span>";
                     $last_sv[] = $key;
                 }
                 $last_sv = HALIMHelper::array_key_last($last_sv);
@@ -343,7 +343,7 @@ class HaLimCore_EPM extends HaLimCore_Init
                         echo "\t\t\t\t<div class=\"current_server\">\r\n\t\t\t\t\t<p style=\"font-weight: 700;\">Current Server:</p>\r\n\t\t\t\t\t";
                         foreach ($_obfuscated_0D29291B25012C0A30180D0A0B1E102C2118093B042301_ as $key => $value) {
                             $active = $server == $key ? " active" : "";
-                            echo "<span class=\"lsv\"><a class=\"item" . $active . "\" href=\"?page=halim-episode-manager&act=edit_ep&post_id=" . $postID . "&server=" . $key . "&paged=" . $paged . "&cat=" . $cat_id . "\">" . $value->halimmovies_server_name . "</a><span class=\"del-server\" data-index=\"" . $key . "\" data-reload=\"\"><span class=\"dashicons dashicons-no\"></span></span></span>";
+                            echo "<span class=\"lsv\"><a class=\"item" . $active . "\" href=\"?page=halim-episode-manager&act=edit_ep&post_id=" . urlencode($postID) . "&server=" . urlencode($key) . "&paged=" . urlencode($paged) . "&cat=" . urlencode($cat_id) . "\">" . htmlspecialchars($value->halimmovies_server_name) . "</a><span class=\"del-server\" data-index=\"" . htmlspecialchars($key) . "\" data-reload=\"\"><span class=\"dashicons dashicons-no\"></span></span></span>";
                             $last_sv[] = $key;
                         }
                         echo "\t\t\t\t</div>\r\n\t\t\t";

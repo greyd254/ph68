@@ -302,7 +302,7 @@ class HaLimCore_EPM extends HaLimCore_Init
                     echo "\t\t\t\t<div class=\"current_server\">\r\n\t\t\t\t\t<p style=\"font-weight: 700;\">Current Server:</p>\r\n\t\t\t\t\t";
                     foreach ($_obfuscated_0D3C160E133218260F350528020412150B241915371722_ as $key => $value) {
                         $active = $server == $key ? " active" : "";
-                        echo "<span class=\"lsv\"><a class=\"item" . $active . "\" href=\"?page=halim-episode-manager&act=edit_ep&post_id=" . $postID . "&server=" . $key . "&paged=" . $paged . "&cat=" . $cat_id . "\">" . $value->halimmovies_server_name . "</a><span class=\"del-server\" data-index=\"" . $key . "\" data-reload=\"\"><span class=\"dashicons dashicons-no\"></span></span></span>";
+                        echo '<span class="lsv"><a class="item' . esc_attr($active) . '" href="' . esc_url('?page=halim-episode-manager&act=edit_ep&post_id=' . $postID . '&server=' . $key . '&paged=' . $paged . '&cat=' . $cat_id) . '">' . esc_html($value->halimmovies_server_name) . '</a><span class="del-server" data-index="' . esc_attr($key) . '" data-reload=""><span class="dashicons dashicons-no"></span></span></span>';
                         $_obfuscated_0D0808143F250A242B242F1304110529333D401B081522_[] = $key;
                     }
                     echo "\t\t\t\t</div>\r\n\t\t\t";

@@ -130,7 +130,7 @@ $countdown_time = cs_get_option('dl_ads_countdown_time') ? cs_get_option('dl_ads
 
 		</div>
 		<div class="text-center">
-			<span class="txt"><?php _e('Are you going to', 'halimthemes'); ?> <strong><?php echo get_root_domain($url); ?></strong></span>
+			<span class="txt"><?php _e('Are you going to', 'halimthemes'); ?> <strong><?php echo htmlspecialchars(get_root_domain($url), ENT_QUOTES, 'UTF-8'); ?></strong></span>
 		</div>
 	</div>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

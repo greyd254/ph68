@@ -51,7 +51,7 @@ $embed_url = isset($_GET['url']) ? HaLimCrypt::decrypt(sanitize_text_field($_GET
 </head>
 <body>
 	<div id="halim-embed" class="embed-responsive embed-responsive-16by9" style="display: none;">
-		<iframe class="embed-responsive-item" src="<?php echo $embed_url; ?>" allowfullscreen></iframe>
+		<iframe class="embed-responsive-item" src="<?php echo htmlspecialchars($embed_url, ENT_QUOTES); ?>" allowfullscreen></iframe>
 	</div>
 
 	<div id="halim-player"></div>

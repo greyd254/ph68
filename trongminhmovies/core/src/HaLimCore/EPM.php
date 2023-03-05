@@ -305,10 +305,13 @@ class HaLimCore_EPM extends HaLimCore_Init
                     }
                     echo "\t\t\t\t</div>\r\n\t\t\t";
                 }
+                $serverName = isset($_POST['servername']) ? htmlspecialchars($_POST['servername']) : '';
                 echo "\r\n\t\t\t<p>\r\n\t\t\t\t<label for=\"servername\" style=\"font-weight: 700;\">New Server Name:</label>\r\n\t\t\t\t<input type=\"text\" name=\"servername\" id=\"servername\" value=\"Server #";
                 echo $_obfuscated_0D3C160E133218260F350528020412150B241915371722_ ? HALIMHelper::array_key_last($_obfuscated_0D3C160E133218260F350528020412150B241915371722_) + 2 : $_obfuscated_0D271F31262E1626355B0C170A1C16151416112F2C1211_ + 1;
                 echo "\" placeholder=\"Server HD\" data-server=\"";
                 echo $_obfuscated_0D3C160E133218260F350528020412150B241915371722_ ? HALIMHelper::array_key_last($_obfuscated_0D3C160E133218260F350528020412150B241915371722_) + 1 : $_obfuscated_0D271F31262E1626355B0C170A1C16151416112F2C1211_;
+                echo "\"/>";
+                echo "\r\n\t\t\t\t<input type=\"submit\" name=\"btn_add_server\" id=\"btn_add_server\" value=\"Add Server\" />\r\n\t\t\t</p>\r\n\t\t</form>";
                 echo "\" data-post-id=\"";
                 echo $postID;
                 echo "\">\r\n\t\t\t</p>\r\n            <p>\r\n\t            <span class=\"tip\" style=\"border: 1px solid #7e8993;margin-bottom: -3px;\"><span>";

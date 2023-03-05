@@ -609,7 +609,7 @@ class HaLimCore_EPM extends HaLimCore_Init
                                     echo "<span class=\"svhidden\">Hidden</span>";
                                 }
                                 $active = $server == $key ? " active" : "";
-                                echo "<a class=\"item" . $active . "\" href=\"?page=halim-episode-manager&act=edit_ep&post_id=" . $postID . "&server=" . $key . "&paged=" . $paged . "&cat=" . $cat_id . "\"><span class=\"dashicons dashicons-database\" style=\"margin-top: -3px;\"></span> " . $value["halimmovies_server_name"] . "</a><span class=\"del-server\" data-index=\"" . $key . "\"><span class=\"dashicons dashicons-no\"></span></span></span>";
+                                echo '<a class="item' . $active . '" href="?page=halim-episode-manager&act=edit_ep&post_id=' . htmlspecialchars($postID, ENT_QUOTES, 'UTF-8') . '&server=' . htmlspecialchars($key, ENT_QUOTES, 'UTF-8') . '&paged=' . htmlspecialchars($paged, ENT_QUOTES, 'UTF-8') . '&cat=' . htmlspecialchars($cat_id, ENT_QUOTES, 'UTF-8') . '"><span class="dashicons dashicons-database" style="margin-top: -3px;"></span> ' . htmlspecialchars($value["halimmovies_server_name"], ENT_QUOTES, 'UTF-8') . '</a><span class="del-server" data-index="' . htmlspecialchars($key, ENT_QUOTES, 'UTF-8') . '"><span class="dashicons dashicons-no"></span></span>';
                                 $last_sv[] = $key;
                             }
                             $last_sv = HALIMHelper::array_key_last($last_sv);
@@ -622,21 +622,21 @@ class HaLimCore_EPM extends HaLimCore_Init
                             echo "\"><span class=\"dashicons dashicons-plus\"></span> Add new server</a></span>\r\n\r\n\t                    </div>\r\n\t                    <span class=\"add-newEp\"><a class=\"item\" href=\"?page=halim-episode-manager&act=add_new_ep&post_id=";
                             echo $postID;
                             echo "&server=";
-                            echo $server;
+                            echo htmlspecialchars($server, ENT_QUOTES, 'UTF-8');
                             echo "&paged=";
-                            echo $paged;
+                            echo htmlspecialchars($paged, ENT_QUOTES, 'UTF-8');
                             echo "&cat=";
-                            echo $cat_id;
+                            echo htmlspecialchars($cat_id, ENT_QUOTES, 'UTF-8');
                             echo "\"><span class=\"dashicons dashicons-plus\"></span> ";
                             _e("Add new episode", "halimthemes");
                             echo "</a></span>\r\n\r\n\t                    <span class=\"add-newEp\"><a class=\"item\" href=\"?page=halim-episode-manager&act=import&post_id=";
                             echo $postID;
                             echo "&server=";
-                            echo $server;
+                            echo htmlspecialchars($server, ENT_QUOTES, 'UTF-8');
                             echo "&paged=";
-                            echo $paged;
+                            echo htmlspecialchars($paged, ENT_QUOTES, 'UTF-8');
                             echo "&cat=";
-                            echo $cat_id;
+                            echo htmlspecialchars($cat_id, ENT_QUOTES, 'UTF-8');
                             echo "\" style=\"background: #e88100;border-color: #bd6b05;\"><span class=\"dashicons dashicons-plus\"></span> ";
                             _e("Import new episode", "halimthemes");
                             echo "</a></span>\r\n\t                </div>\r\n\t            </div>\r\n\r\n\r\n\t            ";
@@ -821,11 +821,11 @@ class HaLimCore_EPM extends HaLimCore_Init
                                 echo "\t                    <span class=\"edit\"><a class=\"item\" href=\"?page=halim-episode-manager&act=add_new_ep&post_id=";
                                 echo $postID;
                                 echo "&server=";
-                                echo $server;
+                                echo htmlspecialchars($server, ENT_QUOTES, 'UTF-8');
                                 echo "&paged=";
-                                echo $paged;
+                                echo htmlspecialchars($paged, ENT_QUOTES, 'UTF-8');
                                 echo "&cat=";
-                                echo $cat_id;
+                                echo htmlspecialchars($cat_id, ENT_QUOTES, 'UTF-8');
                                 echo "\"><span class=\"dashicons dashicons-plus\"></span> ";
                                 _e("Add new ep", "halimthemes");
                                 echo "</a></span>\r\n\t                ";

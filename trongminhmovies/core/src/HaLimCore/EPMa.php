@@ -100,11 +100,13 @@ class HaLimCore_EPM extends HaLimCore_Init
             echo "</option>\r\n\t            <option value=\"?page=halim-episode-manager&status=completed\"";
             echo __selected("completed", $status);
             echo ">";
-            _e("Complete", "halimthemes");
-            echo "</option>\r\n\t        </select>\r\n\r\n\r\n\t        <select id=\"orderby_select\">\r\n\t            <option value=\"\">";
-            _e("Orderby", "halimthemes");
-            echo "</option>\r\n\t            <option value=\"?page=halim-episode-manager&orderby=ASC\"";
-            echo __selected("ASC", $_obfuscated_0D1C0A2E1E1C0A0302240C5B285B02352840272D0D0522_);
+            $input = strip_tags($_POST['input']); 
+                if (!ctype_alnum($input)) { 
+                    die("Invalid input!");
+                }
+            _e(htmlspecialchars($input, ENT_QUOTES), "halimthemes");
+            echo htmlspecialchars("<option value=\"" . urlencode("?page=halim-episode-manager&orderby=ASC") . "\" " . __selected("ASC", $_obfuscated_0D1C0A2E1E1C0A0302240C5B285B02352840272D0D0522_) . ">", ENT_QUOTES);
+
             echo ">";
             _e("ASC", "halimthemes");
             echo "</option>\r\n\t            <option value=\"?page=halim-episode-manager&orderby=DESC\"";
